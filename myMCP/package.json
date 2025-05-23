@@ -1,0 +1,18 @@
+{
+  "name": "mymcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {},
+  "description": "MCP server for Claude integration"
+}
