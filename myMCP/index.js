@@ -1,6 +1,8 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import dotenv from "dotenv";
+dotenv.config();
 
 const server = new McpServer({
     name: "Claude Assistant",
@@ -15,7 +17,7 @@ async function greet(name) {
 // Weather function to get weather data for a city
 async function getWeather(city) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=150f560365e788066057abf69735713b&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric`);
         const data = await response.json();
         
         if (data.cod === 200) {
